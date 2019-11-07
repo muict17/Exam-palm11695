@@ -49,22 +49,22 @@ int main()
             arr[i] = 1;
         }
     }
-    //....
-    for(int i=0; i<digits; i++)
-    {
-        if(arr[i]>=2)
-        {
-            printf("WTF that you input.\nThe exam said ONLY Binary!!\n");
-        }
-    }
     
     arr[digits-1]++;
+    for(int i=digits-1; i>=0; i--)
+    {
+        if(arr[i]==2)
+        {
+            arr[i] = 0;
+            arr[i-1] += 1;
+        }
+    }
+
     for(int i=0; i<digits; i++)
     {
         printf("%d",arr[i]);
     }
     printf("\n");
 
-    
     return 0;
 }
